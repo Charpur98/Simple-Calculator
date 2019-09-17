@@ -229,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(437, 236);
+            this.ClientSize = new System.Drawing.Size(426, 236);
             this.Controls.Add(this.buttonC);
             this.Controls.Add(this.Display);
             this.Controls.Add(this.buttonAdd);

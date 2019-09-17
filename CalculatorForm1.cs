@@ -20,6 +20,7 @@ namespace Calculator
         string num2 = string.Empty;
         char operation;
         double answer = 0.0;
+        int numCount = 0;
 
         public CalculatorForm1()
         {
@@ -98,6 +99,11 @@ namespace Calculator
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            numCount++;
+            if(numCount >= 2)
+            {
+                buttonEq_Click_1(sender, e);
+            }
             num1 = input;
             operation = '+';
             input = string.Empty;
@@ -105,6 +111,11 @@ namespace Calculator
 
         private void buttonSub_Click(object sender, EventArgs e)
         {
+            numCount++;
+            if (numCount >= 2)
+            {
+                buttonEq_Click_1(sender, e);
+            }
             num1 = input;
             operation = '-';
             input = string.Empty;
@@ -112,6 +123,11 @@ namespace Calculator
 
         private void buttonX_Click_1(object sender, EventArgs e)
         {
+            numCount++;
+            if (numCount >= 2)
+            {
+                buttonEq_Click_1(sender, e);
+            }
             num1 = input;
             operation = '*';
             input = string.Empty;
@@ -119,6 +135,11 @@ namespace Calculator
 
         private void buttonDiv_Click_1(object sender, EventArgs e)
         {
+            numCount++;
+            if (numCount >= 2)
+            {
+                buttonEq_Click_1(sender, e);
+            }
             num1 = input;
             operation = '/';
             input = string.Empty;
@@ -144,6 +165,11 @@ namespace Calculator
             double first, second;
             double.TryParse(num1, out first);
             double.TryParse(num2, out second);
+
+            if(numCount > 2)
+            {
+                first = answer;
+            }
 
             if (operation == '+')
             {
@@ -185,6 +211,7 @@ namespace Calculator
 
             }
             operation = 'N';
+            numCount++;
         }
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -194,6 +221,7 @@ namespace Calculator
             num1 = string.Empty;
             num2 = string.Empty;
             operation = 'N';
+            numCount = 0;
 
         }
     }
